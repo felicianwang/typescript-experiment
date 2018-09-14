@@ -4,13 +4,11 @@ import styled from 'styled-components';
 interface Props { type: string, color: string; }
 export default class Input extends React.Component<Props, {}> {
 	render() {
-		return <div><InputComponent placeholder="A small text input" color={this.props.color}/></div>;
+		return <div><InputComponent type={this.props.type} placeholder="A small text input" color={this.props.color}/></div>;
 	}
 }
 
-const InputComponent = styled.input.attrs({
-	type: props.type
-})`
+const InputComponent = styled.input`
 	color: ${props => props.color || "palevioletred"};
 	font-size: 1em;
 	border: 2px solid palevioletred;
